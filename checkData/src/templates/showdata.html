@@ -1,0 +1,22 @@
+$def with(tables)
+<html>
+<head>
+<title>Show Data</title>
+</head>
+<body>
+$for table in tables:
+	<li>$table["title"]</li>
+	<table border="1">
+	<tr>
+	$for j in table["column"]:
+		<th>$(loop.index).$j</th>
+	</tr>
+	$for todo in table["data"]:
+	    <tr>
+	    $for i in todo:
+	    	<th>$i</th>
+	    </tr>
+	</table>
+	<br />
+</body>
+</html>
